@@ -50,7 +50,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
 
             SizedBox(height: 20),
-            Text("Email :", style: TextStyle(fontWeight: FontWeight.bold)),
+            Text("Email", style: TextStyle(fontWeight: FontWeight.bold)),
             TextField(
               controller: _emailController,
               decoration: InputDecoration(
@@ -61,6 +61,31 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
+            SizedBox(height: 5),
+
+            Text("Password", style: TextStyle(fontWeight: FontWeight.bold)),
+            TextField(
+              controller: _passwordController,
+              obscureText: _showPassword,
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.lock),
+                suffixIcon: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      _showPassword = !_showPassword;
+                    });
+                  },
+                  icon: Icon(
+                    _showPassword ? Icons.remove_red_eye : Icons.visibility_off,
+                  ),
+                ),
+                hintText: 'Min. 8 character',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+            ),
+            SizedBox(height: 8),
           ],
         ),
       ),
