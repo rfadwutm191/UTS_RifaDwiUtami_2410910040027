@@ -28,6 +28,17 @@ class Login extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(height: 30),
+            Text(
+              "Sign In",
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            ),
+
+            SizedBox(height: 5),
+            Text(
+              "Enter your ID and password to sign in",
+              style: TextStyle(fontSize: 14, color: Colors.grey),
+            ),
           ],
         ),
       ),
