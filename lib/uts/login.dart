@@ -25,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
             Center(
               child: Column(
                 children: [
-                  Image.asset('gambar/logo.png', height: 100),
+                  Image.asset('gambar/logo.png', height: 150),
                   SizedBox(height: 8),
                   Text(
                     "LKS MART",
@@ -114,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                     borderRadius: BorderRadius.circular(15),
                   ),
                 ),
-                
+
                 child: Text(
                   "Login",
                   style: TextStyle(fontSize: 18, color: Colors.white),
