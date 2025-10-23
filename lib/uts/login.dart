@@ -9,6 +9,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool _showPassword = true;
+  bool _keepLoggedIn = false;
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
@@ -46,10 +47,10 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(height: 5),
             Text(
               "Enter your ID and password to sign in",
-              style: TextStyle(fontSize: 14, color: Colors.grey),
+              style: TextStyle(fontSize: 14, color: Colors.blueGrey),
             ),
 
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             Text("Email", style: TextStyle(fontWeight: FontWeight.bold)),
             TextField(
               controller: _emailController,
@@ -57,12 +58,11 @@ class _LoginPageState extends State<LoginPage> {
                 prefixIcon: const Icon(Icons.email),
                 hintText: 'Masukkan email',
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(10),
                 ),
               ),
             ),
             SizedBox(height: 5),
-
             Text("Password", style: TextStyle(fontWeight: FontWeight.bold)),
             TextField(
               controller: _passwordController,
@@ -81,11 +81,46 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 hintText: 'Min. 8 character',
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(10),
                 ),
               ),
             ),
             SizedBox(height: 8),
+            Row(
+              children: [
+                Checkbox(
+                  value: _keepLoggedIn,
+                  onChanged: (value) {
+                    setState(() {
+                      _keepLoggedIn = value!;
+                    });
+                  },
+                ),
+                Text("Keep me logged in"),
+              ],
+            ),
+            SizedBox(height: 10),
+            SizedBox(
+              width: double.infinity,
+              height: 50,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/hal2');
+                },
+
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 72, 98, 142),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                ),
+                
+                child: Text(
+                  "Login",
+                  style: TextStyle(fontSize: 18, color: Colors.white),
+                ),
+              ),
+            ),
           ],
         ),
       ),
