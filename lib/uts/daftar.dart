@@ -19,6 +19,7 @@ class _DaftarPageState extends State<DaftarPage> {
             SizedBox(height: 60),
             Center(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Image.asset('gambar/logo.png', height: 150),
                   SizedBox(height: 8),
@@ -30,7 +31,7 @@ class _DaftarPageState extends State<DaftarPage> {
                       color: Colors.blue,
                     ),
                   ),
-                  Row(
+                  Column(
                     children: [
                       Text(
                         "Daftar",
@@ -42,6 +43,11 @@ class _DaftarPageState extends State<DaftarPage> {
                       ),
 
                       SizedBox(height: 8),
+                      Column(
+                        children: [
+                          Text("Masukkan Data Pribadi Anda")
+                        ],
+                      )
                     ],
                   ),
                 ],
