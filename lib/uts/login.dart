@@ -7,28 +7,30 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              height: 200,
-              width: 2000,
-              decoration: BoxDecoration(
-                color: Colors.white,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Image.asset(
-                  "gambar/logo.png",
-                  fit: BoxFit.contain,
-                ),
+            const SizedBox(height: 60),
+            Center(
+              child: Column(
+                children: [
+                  Image.asset('gambar/logo.png', height: 100),
+                  SizedBox(height: 8),
+                  Text(
+                    "LKS MART",
+                    style: TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue,
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
         ),
       ),
-
     );
   }
 }
