@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  bool _showPassword = true;
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +47,19 @@ class Login extends StatelessWidget {
             Text(
               "Enter your ID and password to sign in",
               style: TextStyle(fontSize: 14, color: Colors.grey),
+            ),
+
+            SizedBox(height: 20),
+            Text("Email :", style: TextStyle(fontWeight: FontWeight.bold)),
+            TextField(
+              controller: _emailController,
+              decoration: InputDecoration(
+                prefixIcon: const Icon(Icons.email),
+                hintText: 'Masukkan email',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
             ),
           ],
         ),
