@@ -21,7 +21,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 60),
+             SizedBox(height: 60),
             Center(
               child: Column(
                 children: [
@@ -105,7 +105,7 @@ class _LoginPageState extends State<LoginPage> {
               height: 50,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/hal2');
+                  Navigator.pushNamed(context, '/menu');
                 },
 
                 style: ElevatedButton.styleFrom(
