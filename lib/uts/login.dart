@@ -9,7 +9,7 @@ class Login extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               height: 200,
